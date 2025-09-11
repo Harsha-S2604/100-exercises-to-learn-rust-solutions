@@ -6,7 +6,8 @@ mod tests {
 
     #[test]
     fn u16_to_u32() {
-        let v: u32 = todo!();
+        let s: u16 = 47;
+        let v: u32 = s as _;
         assert_eq!(47u16 as u32, v);
     }
 
@@ -20,18 +21,18 @@ mod tests {
         // catch this at compile time.
         #[allow(overflowing_literals)]
         let x = { 255 as i8 };
-
+    
         // You could solve this by using exactly the same expression as above,
         // but that would defeat the purpose of the exercise. Instead, use a genuine
         // `i8` value that is equivalent to `255` when converted to `u8`.
-        let y: i8 = todo!();
+        let y: i8 = -1; // todo!();
 
         assert_eq!(x, y);
     }
 
     #[test]
     fn bool_to_u8() {
-        let v: u8 = todo!();
+        let v: u8 = true as _;
         assert_eq!(true as u8, v);
     }
 }
