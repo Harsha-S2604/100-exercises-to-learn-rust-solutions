@@ -1,3 +1,25 @@
+trait Power<T = Self> {
+    fn power(&self, n: T) -> u32;
+}
+
+impl Power for u32 {
+    fn power(&self, n: u32) -> u32 {
+        self.pow(n)
+    }
+}
+
+impl Power<&u32> for u32 {
+    fn power(&self, n: &u32) -> u32 {
+        self.pow(*n)
+    }
+}
+
+impl Power<u16> for u32 {
+    fn power(&self, n: u16) -> u32 {
+        self.pow(n.into())
+    }
+}
+
 // TODO: Define a new trait, `Power`, that has a method `power` that raises `self`
 //  to the power of `n`.
 //  The trait definition and its implementations should be enough to get
